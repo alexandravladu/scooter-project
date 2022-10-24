@@ -29,7 +29,7 @@ describe('check registration and login', () => {
  })
 })
 
-// log in
+
 
 
 // add scooter
@@ -39,6 +39,9 @@ describe('check is a scooter can be added or removed', () => {
         const scooterApp = new ScooterApp()
         const scooter = new Scooter(null, user)
         scooterApp.addScooter(isObject.stations, scooter)
+        test('first test', () => {
+            expect(scooter.stations[0]).toBe('LondonBlackfriers')
+        })
     })
 })
 
