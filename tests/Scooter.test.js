@@ -1,14 +1,16 @@
 const Scooter = require('../src/Scooter')
 const User = require('../src/User')
 
+const isObject = new Scooter('Sunderland')
 //typeof scooter === object
 describe('scooter object', () => {
-  test('does something', () => {
+  test('check if scooter is an object', () => {
     // edit this to be a real test!
-    expect(false).toEqual(true);
+    expect(typeof(isObject)).toBe('object');
   }
 )
 })
+
 
 //Method tests
 describe('scooter methods', () => {
@@ -21,5 +23,9 @@ describe('scooter methods', () => {
   //requestRepair method
 
   //charge method
-
+  test("charge", async () => {
+    const scooter = new Scooter();
+    await scooter.recharge(); // we need to wait for the charge!
+    expect(Scooter.charge).toBe(100);
+});
 })
